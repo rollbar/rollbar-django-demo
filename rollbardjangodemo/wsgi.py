@@ -22,5 +22,9 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'rollbardjangodemo.settings'
 # file. This includes Django's development server, if the WSGI_APPLICATION
 # setting points here.
 
+
 # Apply WSGI middleware if necessary
 application = get_wsgi_application()
+
+from whitenoise.django import DjangoWhiteNoise
+application = DjangoWhiteNoise(application)
