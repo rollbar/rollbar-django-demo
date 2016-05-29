@@ -169,7 +169,15 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
 )
+
+
+ROLLBAR = {
+    'access_token': 'c0c9e4316b85498ea02d82b2e313bf34',
+    'environment': 'development' if DEBUG else 'production',
+    'root': ABS_PROJECT_ROOT,
+}
 
 
 # A sample logging configuration. The only tangible logging
