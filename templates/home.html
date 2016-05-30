@@ -7,6 +7,30 @@
 
 {% block content %}
 <!-- Main jumbotron for a primary marketing message or call to action -->
+
+<script>
+var lookup = {
+  1: viewOne,
+  2: viewTwo
+}
+
+function viewDetails(x) {
+  Rollbar.info("Called viewDetails", {x: x});
+  lookup[x]();
+}
+
+function viewOne() {
+  var foo = 0;
+  return foo();
+}
+
+function viewTwo() {
+  var x = {}
+  return x.baz();
+}
+
+</script>
+
 <div class="jumbotron">
     <div class="container">
         <h1>{{ some_dynamic_value }}</h1>
@@ -25,21 +49,21 @@
 
             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
 
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-default" href="#" onclick="viewDetails(1);" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
             <h2>Heading</h2>
 
             <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
 
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-default" href="#" onclick="viewDetails(2);" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
             <h2>Heading</h2>
 
             <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
 
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-default" href="#" onclick="viewDetails(3);" role="button">View details &raquo;</a></p>
         </div>
     </div>
 
