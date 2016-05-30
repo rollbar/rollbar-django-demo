@@ -166,6 +166,7 @@ TEMPLATES = [
 ]
 
 MIDDLEWARE_CLASSES = (
+    'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -174,7 +175,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'rollbar.contrib.django.middleware.RollbarNotifierMiddleware',
 )
 
 

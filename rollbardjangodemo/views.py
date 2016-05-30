@@ -1,2 +1,3 @@
 def broken(request):
-    return 'Hello'
+    data = None
+    return data['result']
