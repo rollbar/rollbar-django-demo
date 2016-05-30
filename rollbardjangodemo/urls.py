@@ -25,5 +25,6 @@ urlpatterns = [
     # Homepage
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^broken$', views.broken),
+    url(r'^sign_in$', views.sign_in),
     url(r'^admin/', include(admin.site.urls)),
 ]
