@@ -17,11 +17,13 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from rollbardjangodemo.home.views import HomeView
+from rollbardjangodemo import views
 
 admin.autodiscover()
 
 urlpatterns = [
     # Homepage
     url(r'^$', HomeView.as_view(), name='home'),
+    url(r'^broken$', views.broken),
     url(r'^admin/', include(admin.site.urls)),
 ]
