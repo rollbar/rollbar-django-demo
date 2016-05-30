@@ -16,11 +16,11 @@ import sys
 # Django settings for rollbardjangodemo - suitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = (
-
+  '*'
 )
 
 # SECURITY WARNING: keep the secret key used in production secret!
