@@ -37,7 +37,6 @@ if ABS_PROJECT_ROOT not in sys.path:
     sys.path.insert(0, ABS_PROJECT_ROOT)
 
 ADMINS = (
-    ('Your Name', 'admin@example.com'),
 )
 MANAGERS = ADMINS
 
